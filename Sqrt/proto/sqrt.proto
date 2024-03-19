@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package grpc;
+
+option go_package = "./Sqrt/proto";
+
+message NumRequest {
+    int32 num = 1;
+}
+
+message NumRespone {
+    double num = 1;
+}
+
+service GetSQRT {
+    rpc SQRT(NumRequest) returns (NumRespone);
+}
