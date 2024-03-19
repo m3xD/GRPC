@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package grpc;
+
+option go_package = "./Max/proto";
+
+message GetNumber {
+    int32 num = 1;
+}
+
+message ResponseNumber {
+    int32 num = 1;
+}
+
+service GetMax {
+    rpc Max(stream GetNumber) returns (stream ResponseNumber);
+}
